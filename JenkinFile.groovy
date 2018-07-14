@@ -2,10 +2,11 @@ node {
     stage 'Clone the project'
     git 'https://github.com/manavdewan1990/demo.git'
 
-    dir('spring-jenkins-pipeline') {
+    dir('demo') {
         stage("Compilation and Analysis") {
             parallel 'Compilation': {
-                sh "../mvnw clean install -DskipTests"
+                sh "pwd"
+                sh "./mvnw clean install -DskipTests"
             }, 'Static Analysis': {
                 stage("Checkstyle") {
                     sh "./mvnw checkstyle:checkstyle"
