@@ -2,7 +2,6 @@ node {
     stage 'Clone the project'
     git 'https://github.com/manavdewan1990/demo.git'
 
-    dir('demo') {
         stage("Compilation and Analysis") {
             parallel 'Compilation': {
                 sh "pwd"
@@ -60,5 +59,5 @@ node {
                 }
             }
         }
-    }
+
 }
