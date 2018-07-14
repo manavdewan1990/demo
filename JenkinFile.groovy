@@ -5,7 +5,7 @@ node {
     dir('spring-jenkins-pipeline') {
         stage("Compilation and Analysis") {
             parallel 'Compilation': {
-                sh "./mvnw clean install -DskipTests"
+                sh "../mvnw clean install -DskipTests"
             }, 'Static Analysis': {
                 stage("Checkstyle") {
                     sh "./mvnw checkstyle:checkstyle"
